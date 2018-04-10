@@ -268,7 +268,7 @@
         if (_pageIndicatorImage) {
             indicatorView.layer.cornerRadius = 0;
         }else {
-            indicatorView.layer.cornerRadius = _currentPage == index ? _currentPageIndicatorSize.width/2 : _pageIndicatorSize.width/2;
+            indicatorView.layer.cornerRadius = _currentPage == index ? (MIN(_currentPageIndicatorSize.height, _currentPageIndicatorSize.width) * 0.5) : (MIN(_pageIndicatorSize.height, _pageIndicatorSize.width) * 0.5);
         }
         CGSize size = index == _currentPage ? _currentPageIndicatorSize : _pageIndicatorSize;
         indicatorView.frame = CGRectMake(orignX - (size.width - _pageIndicatorSize.width)/2, centerY - size.height/2, size.width, size.height);
